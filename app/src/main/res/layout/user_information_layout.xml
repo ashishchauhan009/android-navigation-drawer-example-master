@@ -48,7 +48,7 @@
                         android:layout_marginTop="5dp"
                         android:autoLink="email"
                         android:backgroundTint="@color/colorPrimary"
-                        android:drawableLeft="@mipmap/icon_user_dialog"
+                        android:drawableLeft="@mipmap/icon_designation"
                         android:drawablePadding="5dp"
                         android:gravity="center_vertical"
                         android:textSize="15sp" />
@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:backgroundTint="@color/colorPrimary"
-                        android:drawableLeft="@mipmap/icon_user_dialog"
+                        android:drawableLeft="@mipmap/icon_designation"
                         android:drawablePadding="5dp"
                         android:gravity="center_vertical"
                         android:textSize="15sp" />

@@ -11,25 +11,37 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:fillViewport="true"
-        android:layout_below="@+id/id_tool"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/id_tool"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:orientation="vertical">
 
-            android:paddingLeft="35dp"
-            android:paddingRight="35dp">
-
-            <android.support.v4.widget.NestedScrollView
+            <TextView
+                android:id="@+id/task_name_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center">
+                android:layout_marginLeft="5dp"
+                android:background="@color/white"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_text_size"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -48,23 +60,24 @@
                             android:background="@drawable/cleanmoney_round_corner_button"
                             android:ems="10"
                             android:hint="@string/officer_name"
-                            android:text=""
                             android:inputType="text"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
+                            android:text=""
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textColor="@color/black" />
 
                     </LinearLayout>
 
+
                     <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/designation_ed"
+                        android:id="@+id/topic"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/cleanmoney_round_corner_button"
                         android:ems="10"
-                        android:hint="@string/designation"
+                        android:hint="@string/topic"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -84,13 +97,13 @@
                             android:layout_width="0dp"
                             android:layout_height="40dp"
                             android:layout_weight="2.65"
-                            android:ems="10"
-                            android:text=""
-                            android:hint="@string/date_of_meetting"
                             android:background="@android:color/transparent"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:ems="10"
+                            android:hint="@string/date_of_meetting"
                             android:paddingLeft="10dp"
                             android:singleLine="true"
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textColor="@color/black" />
 
                         <android.support.v7.widget.AppCompatImageView
@@ -105,6 +118,72 @@
                             android:textColor="@color/white"
                             android:textSize="10sp" />
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/cleanmoney_round_corner_button">
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/et_participants"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="4dp"
+                                android:background="@android:color/transparent"
+                                android:ems="10"
+                                android:hint="@string/no_of_participnts"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/cleanmoney_round_corner_button">
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/et_pincode"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_gravity="end"
+                                android:layout_marginTop="4dp"
+                                android:background="@android:color/transparent"
+                                android:ems="10"
+                                android:hint="@string/pincode"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/cleanmoney_round_corner_button"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp">
+
+                        <Spinner
+                            android:id="@+id/spn_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
                     </LinearLayout>
                     <!-- <TextView
                          android:layout_width="wrap_content"
@@ -244,39 +323,65 @@
                             android:orientation="vertical"
                             android:src="@drawable/cleanmoney_round_corner_button">
 
-                            <android.support.v4.widget.NestedScrollView
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/venue_ed"
                                 android:layout_width="match_parent"
-                                android:layout_height="100dp">
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@android:color/transparent"
+                                android:gravity="start"
+                                android:hint="@string/venue"
+                                android:inputType="textMultiLine"
+                                android:minLines="6"
+                                android:padding="4dp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                                <android.support.v7.widget.AppCompatEditText
-                                    android:id="@+id/venue_ed"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_marginRight="5dp"
 
-                                    android:gravity="start"
-                                    android:hint="@string/venue"
-                                    android:inputType="textMultiLine"
-                                    android:minLines="6"
-                                    android:padding="4dp"
-                                    android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                            </android.support.v4.widget.NestedScrollView>
                         </LinearLayout>
 
-                        <android.support.v7.widget.AppCompatEditText
-                            android:id="@+id/audience_ed"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/white_shade"
+                            android:orientation="vertical"
+                            android:src="@drawable/cleanmoney_round_corner_button">
+
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/activities_ed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@android:color/transparent"
+                                android:gravity="start"
+                                android:hint="@string/activities"
+                                android:inputType="textMultiLine"
+                                android:minLines="6"
+                                android:padding="4dp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/cleanmoney_round_corner_button"
-                            android:ems="10"
-                            android:hint="@string/target_audience"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="@color/black" />
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp">
+
+                            <Spinner
+                                android:id="@+id/spn_audience_ed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -288,9 +393,9 @@
                                 android:id="@+id/btn_choose_iv"
                                 style="?android:attr/buttonStyleSmall"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="30dp"
                                 android:layout_marginTop="10dp"
-                                android:background="@drawable/button_selector_blue_whiteshade"
+                                android:background="@drawable/button_selector_blue_shade"
                                 android:clickable="true"
                                 android:text="@string/chooseimage"
                                 android:textColor="@color/white"
@@ -350,7 +455,6 @@
 
                                 <ImageView
                                     android:id="@+id/cross_image1"
-
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_alignEnd="@+id/product_image1"
@@ -420,12 +524,12 @@
                             </RelativeLayout>
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
-
 
 
                             <RelativeLayout
@@ -456,6 +560,7 @@
                                     android:src="@mipmap/delete_orange" />
 
                             </RelativeLayout>
+
                             <RelativeLayout
                                 android:id="@+id/image5_layout"
                                 android:layout_width="wrap_content"
@@ -474,7 +579,6 @@
 
                                 <ImageView
                                     android:id="@+id/cross_image5"
-
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_alignEnd="@+id/product_image5"
@@ -489,9 +593,8 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </android.support.v4.widget.NestedScrollView>
+            </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
 
     <include
